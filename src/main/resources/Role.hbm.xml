@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entity.Role" table="ROLE">
+
+        <meta attribute="class-description">
+            This class contains the employee detail.
+        </meta>
+
+        <id name="id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="title" column="title" type="string"/>
+
+        <set name="employees" table="empl_role">
+            <key column="role_id"/>
+            <many-to-many column="empl_id" class="entity.Employee"/>
+
+        </set>
+
+      <!--  <set name="employees" table="employee">
+
+            <key>
+                <column name="role_id" not-null="true"/>
+            </key>
+            <one-to-many class="entity.Employee"/>
+        </set>
+      -->
+    </class>
+</hibernate-mapping>
