@@ -3,7 +3,6 @@ package entity;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
-
 @Entity
 @Table(name = "product")
 public class Product extends Model {
@@ -20,6 +19,14 @@ public class Product extends Model {
 
     public Product(Long id) {
         super(id);
+    }
+
+    public Product(Long id, String title, BigDecimal priceList, String description, ProductCategory productCategory) {
+        super(id);
+        this.title = title;
+        this.priceList = priceList;
+        this.description = description;
+        this.productCategory = productCategory;
     }
 
     public String getTitle() {
