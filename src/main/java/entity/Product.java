@@ -60,4 +60,14 @@ public class Product extends Model {
     public void setProductCategory(ProductCategory productCategory) {
         this.productCategory = productCategory;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "title='" + title + '\'' +
+                ", priceList=" + priceList +
+                ", description='" + description + '\'' + productCategory.getTitle()+
+                '}';
+    }
 }
+
